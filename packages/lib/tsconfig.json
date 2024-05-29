@@ -1,0 +1,11 @@
+{
+  "extends": "@repo/typescript-config/node.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["@repo/typescript-config/environment.d.ts"],
+    "lib": ["ES2021", "ES2021.String"],
+    "resolveJsonModule": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist/**/*"]
+}

@@ -1,3 +1,2 @@
-export const log = (str: any) => {
-  console.log("logger: " + str);
-};
+export * from "./winston";
+export * from "./graphql";

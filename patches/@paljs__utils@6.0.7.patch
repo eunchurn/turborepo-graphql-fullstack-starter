@@ -1,0 +1,13 @@
+diff --git a/dist/dmmf.js b/dist/dmmf.js
+index 7cec4b020caf64592f863ade61185a3b581f1705..2c450ad31df0778903cec9f8c67ffcf618411661 100644
+--- a/dist/dmmf.js
++++ b/dist/dmmf.js
+@@ -6,7 +6,7 @@ const fs_1 = require("fs");
+ const path_1 = require("path");
+ const display_1 = require("@paljs/display");
+ const getSchemaPath = async (path) => {
+-    const schemaPath = await (0, internals_1.getSchemaPath)(path);
++    const { schemaPath } = await (0, internals_1.getSchemaPath)(path);
+     if (!schemaPath) {
+         display_1.log.throwError(`Could not find a ${display_1.chalk.bold('schema.prisma')} file that is required for this command.\nYou can either provide it with ${display_1.chalk.greenBright('--schema')}, set it as \`prisma.schema\` in your package.json or put it into the default location ${display_1.chalk.greenBright('./prisma/schema.prisma')} https://pris.ly/d/prisma-schema-location`);
+     }

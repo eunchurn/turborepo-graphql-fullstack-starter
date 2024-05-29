@@ -1,0 +1,27 @@
+{
+  "name": "@repo/seed",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "db:seed": "dotenv -e ../../.env -- tsx index.ts",
+    "sync:assets": "dotenv -e ../../.env -- tsx data/initialRoot/uploadDevAssets.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/lib": "workspace:*",
+    "@repo/prisma": "workspace:*",
+    "@repo/schema": "workspace:*",
+    "commander": "12.0.0",
+    "lodash": "4.17.21",
+    "supertokens-node": "16.7.1"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@repo/eslint-config": "workspace:*",
+    "@types/lodash": "4.14.202",
+    "dotenv-cli": "7.3.0",
+    "ts-node": "10.9.2",
+    "tsx": "4.7.0",
+    "typescript": "5.3.3"
+  }
+}

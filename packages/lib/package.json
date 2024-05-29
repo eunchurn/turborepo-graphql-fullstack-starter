@@ -1,0 +1,38 @@
+{
+  "name": "@repo/lib",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "dotenv -e ../../.env -- npm run build -- --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/lodash": "4.14.202",
+    "@types/node": "20.11.19",
+    "@types/papaparse": "5.3.14",
+    "@types/uuid": "9.0.8",
+    "tsup": "^8.0.1",
+    "typescript": "5.3.3"
+  },
+  "dependencies": {
+    "@repo/prisma": "workspace:*",
+    "ajv": "8.12.0",
+    "ansis": "^3.2.0",
+    "commander": "12.0.0",
+    "dotenv-cli": "7.3.0",
+    "jsonwebtoken": "9.0.2",
+    "jszip": "3.10.1",
+    "lodash": "4.17.21",
+    "moment": "2.30.1",
+    "papaparse": "5.4.1",
+    "supertokens-node": "16.7.1",
+    "uuid": "9.0.1"
+  }
+}

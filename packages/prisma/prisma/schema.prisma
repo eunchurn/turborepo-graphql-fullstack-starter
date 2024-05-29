@@ -1,0 +1,134 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+/// User Role
+enum UserRole {
+  /// super user admin
+  SUPER_USER
+  /// admin
+  ADMIN
+  /// read-only user
+  USER_RO
+  /// general user
+  USER_RW
+  /// guest
+  GUEST
+}
+
+enum UserType {
+  ADMIN
+  CLIENT
+  PARTNER
+  CUSTOMER
+}
+
+/// User detail permissions
+enum UserPermission {
+  PROJECT_WRITE
+  PROJECT_READ
+  PROJECT_SETTINGS_WRITE
+  PROJECT_SETTINGS_READ
+  APPROVAL_WRITE
+  APPROVAL_READ
+  MONITORING_WRITE
+  MONITORING_READ
+  USER_WRITE
+  USER_READ
+  NO_PERMISSION
+  ADMINISTRATOR
+}
+
+/// Action
+enum Action {
+  ALLOW
+  DENY
+}
+
+/// Access Log Type
+enum AccessType {
+  SIGNUP
+  SIGNIN
+  TRY
+  REJECTED
+}
+
+/// User information
+model User {
+  /// User ID
+  id          Int              @id @default(autoincrement())
+  /// User UUID
+  uuid        String           @unique @default(uuid())
+  /// created date
+  createdAt   DateTime         @default(now())
+  /// updated date
+  updatedAt   DateTime         @updatedAt
+  /// User email
+  email       String           @unique
+  /// User name
+  name        String?
+  /// User phone number
+  phoneNumber String?
+  /// User description
+  description String?
+  /// User picture
+  imgUrl      String?
+  /// User role
+  role        UserRole         @default(GUEST)
+  /// Supertokens User ID
+  stUserId    String           @unique
+  AccessLog   AccessLog[]
+  policy      Policy[]
+  permission  UserPermission[]
+}
+
+/// Policy
+model Policy {
+  id         Int      @id @default(autoincrement())
+  uuid       String   @unique @default(uuid())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  resource   Resource @relation(fields: [resourceId], references: [id])
+  resourceId Int
+  action     Action
+  user       User?    @relation(fields: [userId], references: [id])
+  userId     Int?
+}
+
+/// Sample resouce
+model Resource {
+  id        Int      @id @default(autoincrement())
+  uuid      String   @unique @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  policies  Policy[]
+}
+
+/// Access Log
+model AccessLog {
+  id         Int        @id @default(autoincrement())
+  createdAt  DateTime   @default(now())
+  user       User?      @relation(fields: [userId], references: [stUserId])
+  userId     String?
+  email      String?
+  message    String     @default("")
+  accessType AccessType
+}
+
+/// Admin Schema (for Paljs)
+model AdminSchema {
+  /// ID
+  id        Int      @id @default(autoincrement())
+  /// createdAt
+  createdAt DateTime @default(now())
+  /// updatedAt
+  updatedAt DateTime @updatedAt
+  /// Schema
+  schema    Json
+}

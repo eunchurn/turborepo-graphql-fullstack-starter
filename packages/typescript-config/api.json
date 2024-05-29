@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "API",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["esnext"],
+    "module": "node16",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"]
+    },
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "maxNodeModuleJsDepth": 10,
+    "sourceMap": false,
+    "outDir": "dist",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitThis": true
+  },
+  "include": ["src/**/*", "!src/generated/resolverTypes.ts"],
+  "exclude": [
+    "node_modules/**/*",
+    "src/generated/resolverTypes.ts",
+    "src/libs/utils/index.ts",
+    "cdk.out"
+  ]
+}

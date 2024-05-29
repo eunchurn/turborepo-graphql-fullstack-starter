@@ -1,0 +1,10 @@
+{
+  "extends": "@repo/typescript-config/node.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["@repo/typescript-config/environment.d.ts"],
+    "resolveJsonModule": true
+  },
+  "include": ["**/*.ts", "data/InitialRoot/function/createSample.ts.old"],
+  "exclude": ["node_modules", "dist/**/*"]
+}

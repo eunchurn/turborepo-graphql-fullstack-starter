@@ -1,26 +1,78 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalEnv": ["PORT"],
+  "globalDotEnv": [".env"],
   "pipeline": {
     "build": {
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "public/dist/**"],
       "dependsOn": ["^build"],
-      "env": ["NEXT_PUBLIC_API_HOST"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "outputMode": "new-only"
     },
-    "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": []
-    },
-    "lint": {
-      "dependsOn": ["^build"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "clean": {
+    "generate": {
+      "dependsOn": ["^build"],
       "cache": false
-    }
+    },
+    "@repo/prisma#build": {
+      "dependsOn": ["@repo/prisma#generate"],
+      "cache": false
+    },
+    "@repo/prisma#generate": {
+      "cache": false
+    },
+    "@repo/schema#generate": {
+      "dependsOn": ["@repo/prisma#generate","@repo/schema#schema:generate"],
+      "cache": false
+    },
+    "@repo/schema#build": {
+      "dependsOn": ["@repo/schema#generate"],
+      "cache": false
+    },
+    "@repo/apollo#codegen": {
+      "dependsOn": ["@repo/schema#generate"],
+      "cache": false
+    },
+    "@repo/apollo#build": {
+      "dependsOn": ["@repo/apollo#codegen"],
+      "cache": false
+    },
+    "web#build": {
+      "cache": false
+    },
+    "api#build": {
+      "cache": false
+    },
+    "lint": {},
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": true
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:push": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "schema:generate": {
+      "cache": false
+    },
+    "postgenerate": {
+      "cache": false
+    },
+    "codegen": {
+      "dependsOn": ["generate"],
+      "cache": false
+    },
+    "typecheck": {
+      "cache": false
+    },
+    "test": {},
+    "test:ci": {
+      "cache": false
+    },
+    "test:update:snapshot": {},
+    "sync:assets": {}
   }
 }

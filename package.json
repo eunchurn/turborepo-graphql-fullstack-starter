@@ -8,17 +8,28 @@
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "generate": "turbo run generate",
+    "reset": "npx npkill"
   },
-  "dependencies": {},
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
+    "npkill": "^0.11.3",
     "prettier": "^3.2.5",
-    "turbo": "latest"
+    "turbo": "1.13.3",
+    "typescript": "5.4.5"
+  },
+  "resolutions": {
+    "jose": "5.2.1"
   },
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=7.0.0"
   },
-  "packageManager": "pnpm@9.1.1"
+  "packageManager": "pnpm@9.1.1",
+  "pnpm": {
+    "overrides": {
+      "@prisma/internals": "5.9.1"
+    }
+  }
 }

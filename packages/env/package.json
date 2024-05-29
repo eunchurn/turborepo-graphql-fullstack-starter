@@ -1,0 +1,19 @@
+{
+  "name": "@repo/env",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/env.js",
+  "types": "dist/env.d.ts",
+  "exports": {
+    ".": "./dist/env.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.12.12",
+    "typescript": "^5.3.3"
+  }
+}
