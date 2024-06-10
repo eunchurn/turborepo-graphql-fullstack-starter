@@ -41,7 +41,7 @@
     "morgan": "^1.10.0",
     "supertokens-node": "16.7.1",
     "swagger-routes-express": "3.3.2",
-    "swagger-ui-express": "5.0.0",
+    "swagger-ui-express": "5.0.1",
     "tsimportlib": "0.0.5"
   },
   "devDependencies": {

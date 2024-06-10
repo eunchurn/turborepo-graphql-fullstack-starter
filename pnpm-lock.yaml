@@ -94,8 +94,8 @@ importers:
         specifier: 3.3.2
         version: 3.3.2
       swagger-ui-express:
-        specifier: 5.0.0
-        version: 5.0.0(express@4.19.2)
+        specifier: 5.0.1
+        version: 5.0.1(express@4.19.2)
       tsimportlib:
         specifier: 0.0.5
         version: 0.0.5
@@ -6622,8 +6622,8 @@ packages:
   swagger-ui-dist@5.17.10:
     resolution: {integrity: sha512-fp8SYeEK216KS1/noDvursUOGojEbkvtckOpOmAGZUjlx/ma7VLD2PLQwyermjlzFrlHI5uCt1V+M1C3qBvRyQ==}
 
-  swagger-ui-express@5.0.0:
-    resolution: {integrity: sha512-tsU9tODVvhyfkNSvf03E6FAk+z+5cU3lXAzMy6Pv4av2Gt2xA0++fogwC4qo19XuFf6hdxevPuVCSKFuMHJhFA==}
+  swagger-ui-express@5.0.1:
+    resolution: {integrity: sha512-SrNU3RiBGTLLmFU8GIJdOdanJTl4TOmT27tt3bWWHppqYmAZ6IDuEuBvMU6nZq0zLEe6b/1rACXCgLZqO6ZfrA==}
     engines: {node: '>= v0.10.32'}
     peerDependencies:
       express: '>=4.0.0 || >=5.0.0-beta'
@@ -14773,7 +14773,7 @@ snapshots:
 
   swagger-ui-dist@5.17.10: {}
 
-  swagger-ui-express@5.0.0(express@4.19.2):
+  swagger-ui-express@5.0.1(express@4.19.2):
     dependencies:
       express: 4.19.2
       swagger-ui-dist: 5.17.10
