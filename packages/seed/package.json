@@ -18,7 +18,7 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "@repo/eslint-config": "workspace:*",
-    "@types/lodash": "4.14.202",
+    "@types/lodash": "4.17.6",
     "dotenv-cli": "7.3.0",
     "ts-node": "10.9.2",
     "tsx": "4.7.0",
