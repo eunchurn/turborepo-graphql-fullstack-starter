@@ -46,7 +46,7 @@
     "@paljs/cli": "6.0.7",
     "@paljs/types": "6.0.7",
     "@types/graphql-upload": "16.0.7",
-    "@types/lodash": "4.14.202",
+    "@types/lodash": "4.17.6",
     "@types/node": "20.12.12",
     "@types/shelljs": "0.8.15",
     "@types/uuid": "9.0.8",
