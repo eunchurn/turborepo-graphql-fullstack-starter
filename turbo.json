@@ -1,12 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalDotEnv": [".env"],
-  "pipeline": {
+  "ui": "tui",
+  "tasks": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
-      "outputMode": "new-only"
+      "outputLogs": "new-only"
     },
     "generate": {
       "dependsOn": ["^build"],
@@ -27,7 +27,7 @@
       "dependsOn": ["@repo/schema#generate"],
       "cache": false
     },
-    "@repo/apollo#codegen": {
+    "@repo/apollo#generate": {
       "dependsOn": ["@repo/schema#generate"],
       "cache": false
     },

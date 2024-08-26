@@ -3,5 +3,61 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "explorer.fileNesting.enabled": true,
+  "eslint.validate": [
+    "typescript"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.wordBasedSuggestions": "matchingDocuments"
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
+  },
+  "cSpell.words": [
+    "Buiderhub",
+    "builderhub",
+    "cobertura",
+    "codegen",
+    "Dettach",
+    "Floortype",
+    "gltf",
+    "licval",
+    "middlewares",
+    "nivo",
+    "rebar",
+    "reduxjs",
+    "supertokens",
+    "typebot",
+    "typecheck",
+    "unoptimized",
+    "vdcanvas",
+    "vdmanager",
+    "vdraw",
+    "VECTORDRAW",
+    "xstate"
+  ],
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "output*.json"
+      ],
+      "url": "/public/testFiles/schema.json"
+    }
+  ],
+  "github-actions.remote-name": "upstream",
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }

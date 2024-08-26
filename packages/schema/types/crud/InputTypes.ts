@@ -3573,12 +3573,59 @@ export const AggregateUser = objectType({
   },
 });
 
+export const UserGroupByOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "UserGroupByOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("uuid", { type: "String" });
+    t.field("createdAt", { type: "DateTime" });
+    t.field("updatedAt", { type: "DateTime" });
+    t.field("email", { type: "String" });
+    t.nullable.field("name", { type: "String" });
+    t.nullable.field("phoneNumber", { type: "String" });
+    t.nullable.field("description", { type: "String" });
+    t.nullable.field("imgUrl", { type: "String" });
+    t.field("role", { type: "UserRole" });
+    t.field("stUserId", { type: "String" });
+    t.nullable.field("permission", { type: "UserPermission" });
+    t.nullable.field("_count", { type: "UserCountAggregateOutputType" });
+    t.nullable.field("_avg", { type: "UserAvgAggregateOutputType" });
+    t.nullable.field("_sum", { type: "UserSumAggregateOutputType" });
+    t.nullable.field("_min", { type: "UserMinAggregateOutputType" });
+    t.nullable.field("_max", { type: "UserMaxAggregateOutputType" });
+  },
+});
+
 export const AggregatePolicy = objectType({
   nonNullDefaults: {
     output: true,
   },
   name: "AggregatePolicy",
   definition(t) {
+    t.nullable.field("_count", { type: "PolicyCountAggregateOutputType" });
+    t.nullable.field("_avg", { type: "PolicyAvgAggregateOutputType" });
+    t.nullable.field("_sum", { type: "PolicySumAggregateOutputType" });
+    t.nullable.field("_min", { type: "PolicyMinAggregateOutputType" });
+    t.nullable.field("_max", { type: "PolicyMaxAggregateOutputType" });
+  },
+});
+
+export const PolicyGroupByOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "PolicyGroupByOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("uuid", { type: "String" });
+    t.field("createdAt", { type: "DateTime" });
+    t.field("updatedAt", { type: "DateTime" });
+    t.field("resourceId", { type: "Int" });
+    t.field("action", { type: "Action" });
+    t.nullable.field("userId", { type: "Int" });
     t.nullable.field("_count", { type: "PolicyCountAggregateOutputType" });
     t.nullable.field("_avg", { type: "PolicyAvgAggregateOutputType" });
     t.nullable.field("_sum", { type: "PolicySumAggregateOutputType" });
@@ -3601,6 +3648,24 @@ export const AggregateResource = objectType({
   },
 });
 
+export const ResourceGroupByOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "ResourceGroupByOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("uuid", { type: "String" });
+    t.field("createdAt", { type: "DateTime" });
+    t.field("updatedAt", { type: "DateTime" });
+    t.nullable.field("_count", { type: "ResourceCountAggregateOutputType" });
+    t.nullable.field("_avg", { type: "ResourceAvgAggregateOutputType" });
+    t.nullable.field("_sum", { type: "ResourceSumAggregateOutputType" });
+    t.nullable.field("_min", { type: "ResourceMinAggregateOutputType" });
+    t.nullable.field("_max", { type: "ResourceMaxAggregateOutputType" });
+  },
+});
+
 export const AggregateAccessLog = objectType({
   nonNullDefaults: {
     output: true,
@@ -3615,12 +3680,50 @@ export const AggregateAccessLog = objectType({
   },
 });
 
+export const AccessLogGroupByOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "AccessLogGroupByOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("createdAt", { type: "DateTime" });
+    t.nullable.field("userId", { type: "String" });
+    t.nullable.field("email", { type: "String" });
+    t.field("message", { type: "String" });
+    t.field("accessType", { type: "AccessType" });
+    t.nullable.field("_count", { type: "AccessLogCountAggregateOutputType" });
+    t.nullable.field("_avg", { type: "AccessLogAvgAggregateOutputType" });
+    t.nullable.field("_sum", { type: "AccessLogSumAggregateOutputType" });
+    t.nullable.field("_min", { type: "AccessLogMinAggregateOutputType" });
+    t.nullable.field("_max", { type: "AccessLogMaxAggregateOutputType" });
+  },
+});
+
 export const AggregateAdminSchema = objectType({
   nonNullDefaults: {
     output: true,
   },
   name: "AggregateAdminSchema",
   definition(t) {
+    t.nullable.field("_count", { type: "AdminSchemaCountAggregateOutputType" });
+    t.nullable.field("_avg", { type: "AdminSchemaAvgAggregateOutputType" });
+    t.nullable.field("_sum", { type: "AdminSchemaSumAggregateOutputType" });
+    t.nullable.field("_min", { type: "AdminSchemaMinAggregateOutputType" });
+    t.nullable.field("_max", { type: "AdminSchemaMaxAggregateOutputType" });
+  },
+});
+
+export const AdminSchemaGroupByOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "AdminSchemaGroupByOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("createdAt", { type: "DateTime" });
+    t.field("updatedAt", { type: "DateTime" });
+    t.field("schema", { type: "Json" });
     t.nullable.field("_count", { type: "AdminSchemaCountAggregateOutputType" });
     t.nullable.field("_avg", { type: "AdminSchemaAvgAggregateOutputType" });
     t.nullable.field("_sum", { type: "AdminSchemaSumAggregateOutputType" });
@@ -3986,5 +4089,86 @@ export const AdminSchemaMaxAggregateOutputType = objectType({
     t.nullable.field("id", { type: "Int" });
     t.nullable.field("createdAt", { type: "DateTime" });
     t.nullable.field("updatedAt", { type: "DateTime" });
+  },
+});
+
+export const CreateManyUserAndReturnOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "CreateManyUserAndReturnOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("uuid", { type: "String" });
+    t.field("createdAt", { type: "DateTime" });
+    t.field("updatedAt", { type: "DateTime" });
+    t.field("email", { type: "String" });
+    t.nullable.field("name", { type: "String" });
+    t.nullable.field("phoneNumber", { type: "String" });
+    t.nullable.field("description", { type: "String" });
+    t.nullable.field("imgUrl", { type: "String" });
+    t.field("role", { type: "UserRole" });
+    t.field("stUserId", { type: "String" });
+    t.nullable.field("permission", { type: "UserPermission" });
+  },
+});
+
+export const CreateManyPolicyAndReturnOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "CreateManyPolicyAndReturnOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("uuid", { type: "String" });
+    t.field("createdAt", { type: "DateTime" });
+    t.field("updatedAt", { type: "DateTime" });
+    t.field("resourceId", { type: "Int" });
+    t.field("action", { type: "Action" });
+    t.nullable.field("userId", { type: "Int" });
+    t.field("resource", { type: "Resource" });
+    t.nullable.field("user", { type: "User" });
+  },
+});
+
+export const CreateManyResourceAndReturnOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "CreateManyResourceAndReturnOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("uuid", { type: "String" });
+    t.field("createdAt", { type: "DateTime" });
+    t.field("updatedAt", { type: "DateTime" });
+  },
+});
+
+export const CreateManyAccessLogAndReturnOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "CreateManyAccessLogAndReturnOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("createdAt", { type: "DateTime" });
+    t.nullable.field("userId", { type: "String" });
+    t.nullable.field("email", { type: "String" });
+    t.field("message", { type: "String" });
+    t.field("accessType", { type: "AccessType" });
+    t.nullable.field("user", { type: "User" });
+  },
+});
+
+export const CreateManyAdminSchemaAndReturnOutputType = objectType({
+  nonNullDefaults: {
+    output: true,
+  },
+  name: "CreateManyAdminSchemaAndReturnOutputType",
+  definition(t) {
+    t.field("id", { type: "Int" });
+    t.field("createdAt", { type: "DateTime" });
+    t.field("updatedAt", { type: "DateTime" });
+    t.field("schema", { type: "Json" });
   },
 });
