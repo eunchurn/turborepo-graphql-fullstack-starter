@@ -13,7 +13,7 @@
     "@repo/schema": "workspace:*",
     "commander": "12.0.0",
     "lodash": "4.17.21",
-    "supertokens-node": "16.7.1"
+    "supertokens-node": "16.7.6"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
