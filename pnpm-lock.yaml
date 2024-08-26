@@ -117,8 +117,8 @@ importers:
         specifier: ^1.10.0
         version: 1.10.0
       supertokens-node:
-        specifier: 16.7.1
-        version: 16.7.1
+        specifier: 16.7.6
+        version: 16.7.6
       swagger-routes-express:
         specifier: 3.3.2
         version: 3.3.2
@@ -381,8 +381,8 @@ importers:
         specifier: 1.7.5
         version: 1.7.5(debug@4.3.6)
       supertokens-node:
-        specifier: 16.7.1
-        version: 16.7.1
+        specifier: 16.7.6
+        version: 16.7.6
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -444,8 +444,8 @@ importers:
         specifier: 5.4.1
         version: 5.4.1
       supertokens-node:
-        specifier: 16.7.1
-        version: 16.7.1
+        specifier: 16.7.6
+        version: 16.7.6
       uuid:
         specifier: 10.0.0
         version: 10.0.0
@@ -600,8 +600,8 @@ importers:
         specifier: 0.8.5
         version: 0.8.5
       supertokens-node:
-        specifier: 16.7.1
-        version: 16.7.1
+        specifier: 16.7.6
+        version: 16.7.6
       utility-types:
         specifier: ^3.11.0
         version: 3.11.0
@@ -676,8 +676,8 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       supertokens-node:
-        specifier: 16.7.1
-        version: 16.7.1
+        specifier: 16.7.6
+        version: 16.7.6
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -7032,8 +7032,8 @@ packages:
   supertokens-js-override@0.0.4:
     resolution: {integrity: sha512-r0JFBjkMIdep3Lbk3JA+MpnpuOtw4RSyrlRAbrzMcxwiYco3GFWl/daimQZ5b1forOiUODpOlXbSOljP/oyurg==}
 
-  supertokens-node@16.7.1:
-    resolution: {integrity: sha512-5MwjWIz4Z04U/qmBXpIJ7z4l0l4SzRyhldgQ5kwuNjEHrnWrf47zabj1onrmL5SId2iKD80EN+ri/F/UBNoLPg==}
+  supertokens-node@16.7.6:
+    resolution: {integrity: sha512-2yqoF6vvpfJEd66Ug261I2IsVrHO3D2XPaY3Xeo5A3CL3V/LIQ9zGfcgS0fDdx49F6Ep2DDqQ35zzgqVRMPaXg==}
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -15774,7 +15774,7 @@ snapshots:
 
   supertokens-js-override@0.0.4: {}
 
-  supertokens-node@16.7.1:
+  supertokens-node@16.7.6:
     dependencies:
       content-type: 1.0.5
       cookie: 0.4.0
