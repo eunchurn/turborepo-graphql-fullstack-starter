@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  jose: 5.2.1
+  jose: 5.9.6
 
 importers:
 
@@ -4269,6 +4269,7 @@ packages:
   eslint@8.0.0:
     resolution: {integrity: sha512-03spzPzMAO4pElm44m60Nj08nYonPGQXmw6Ceai/S4QK82IgwWO1EXx1s9namKzVlbVu3Jf81hb+N+8+v21/HQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -5406,8 +5407,8 @@ packages:
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
 
-  jose@5.2.1:
-    resolution: {integrity: sha512-qiaQhtQRw6YrOaOj0v59h3R6hUY9NvxBmmnMfKemkqYmBB0tEc97NbLP7ix44VP5p9/0YHG8Vyhzuo5YBNwviA==}
+  jose@5.9.6:
+    resolution: {integrity: sha512-AMlnetc9+CV9asI19zHmrgS/WYsWUwCn2R7RzlbJWD7F9eWYUTGyBmU9o6PxngtLGOiDGPRu+Uc4fhKzbpteZQ==}
 
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
@@ -9335,7 +9336,7 @@ snapshots:
       graphql-request: 6.1.0(graphql@16.9.0)
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.5
-      jose: 5.2.1
+      jose: 5.9.6
       js-yaml: 4.1.0
       lodash: 4.17.21
       scuid: 1.1.0
@@ -14085,7 +14086,7 @@ snapshots:
 
   jju@1.4.0: {}
 
-  jose@5.2.1: {}
+  jose@5.9.6: {}
 
   joycon@3.1.1: {}
 
@@ -15781,7 +15782,7 @@ snapshots:
       cross-fetch: 3.1.8
       debug: 4.3.6(supports-color@8.1.1)
       inflation: 2.1.0
-      jose: 5.2.1
+      jose: 5.9.6
       libphonenumber-js: 1.11.7
       nodemailer: 6.9.14
       pkce-challenge: 3.1.0
