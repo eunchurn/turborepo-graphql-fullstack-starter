@@ -24,7 +24,7 @@
     "ajv": "8.17.1",
     "ansis": "^3.3.2",
     "commander": "12.1.0",
-    "dotenv-cli": "7.4.2",
+    "dotenv-cli": "7.4.4",
     "jsonwebtoken": "9.0.2",
     "jszip": "3.10.1",
     "lodash": "4.17.21",
