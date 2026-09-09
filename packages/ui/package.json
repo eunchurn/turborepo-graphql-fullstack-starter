@@ -8,10 +8,10 @@
     "lint": "eslint \"**/*.ts*\" --max-warnings 0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.61",
-    "@types/react-dom": "^18.2.19",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@repo/eslint-config": "workspace:*",
-    "react": "^18.2.0",
+    "react": "^19.0.0",
     "@repo/typescript-config": "workspace:*"
   }
 }
